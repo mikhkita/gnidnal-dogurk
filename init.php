@@ -6,19 +6,35 @@ function getSite(){
 	$sites = array(
 		(object) array(
 			"code" => "thailand",
-			"route" => "в Таиланд",
+			"name" => "Таиланд",
+			"route" => "в Таиланд",
+			"nameRod" => "Таиланд",
+			"metrika" => "50587441",
+			"full" => true
 		),
 		(object) array(
 			"code" => "china",
-			"route" => "в Китай",
+			"name" => "Китай",
+			"route" => "в Китай",
+			"nameRod" => "Китай",
+			"metrika" => "50587663",
+			"full" => true
 		),
 		(object) array(
 			"code" => "vietnam",
-			"route" => "во Вьетнам",
+			"name" => "Вьетнам",
+			"route" => "во Вьетнам",
+			"nameRod" => "Вьетнам",
+			"metrika" => "50587627",
+			"full" => true
 		),
 		(object) array(
 			"code" => "india",
-			"route" => "в Индию",
+			"name" => "Индия",
+			"route" => "в Индию",
+			"nameRod" => "Индию",
+			"metrika" => "50587672",
+			"full" => true
 		),
 	);
 

@@ -10,9 +10,11 @@ if( !isset($_SESSION["group"]) ){
 }
 $group = $_SESSION["group"];
 
-require_once("controller-".$site->code.".php");
+require_once($site->code."/controller.php");
 
-$version = 15;
+require_once("main.php");
+
+$version = 24;
 
 ?><!DOCTYPE html>
 <html>
@@ -49,7 +51,7 @@ $version = 15;
 
 	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 767px)" href="css/layout-mobile.css?<?=$version?>">
 
-	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="https://<?=$site->code?>.kru-god.ru/favicon.ico">
 
 	<!-- Пиксель VK -->
 	<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?157",t.onload=function(){VK.Retargeting.Init("VK-RTRG-264822-cLysz"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-264822-cLysz" style="position:fixed; left:-999px;" alt=""/></noscript>
@@ -85,17 +87,248 @@ $version = 15;
 					</div>
 				</div>
 			</div>
+			<? if( $site->full ): ?>
+				<div class="b-more b-go" data-block=".b-2">
+					<p>Подробнее</p>
+					<img src="i/download-arrow.svg" alt="">
+				</div>
+			<? endif; ?>
 		</div>
 	</div>
+	<? if( $site->full ): ?>
+
+	<? require_once($site->code."/reasons.php"); ?>
+	<div class="b b-2-1">
+		<div class="b-block">
+			<div class="b-overprice clearfix">
+				<div class="b-expert-3-wrap">
+					<div class="b-expert-3">
+						<div id="circle-3" class="b-circle anim fadeDown">
+							<div class="b-expert-cont anim fadeDown delay200">
+								<img src="i/girl-overprice.png" id="expert-3" class="b-expert-pic-3" data-retina="i/girl-overprice@2x.png" data-cont="notOverprice"> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="b-header-h2" id="notOverprice">
+					Допустим, нет&nbsp;сомнений, что я хочу <?=$site->route?>, но где мне взять путевку <b>не переплачивая турагентам?</b>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b b-2-2">
+		<div class="b-block">
+			<h2 class="b-header-h2">Турагентство «Отдых круглый год» занимается&nbsp;продажей туров <b>напрямую от&nbsp;туроператоров</b></h2>
+			<p class="b-subtitle" id="b-2-2h2">Как это работает:</p>
+			<div class="explain clearfix">
+				<div class = "explanation anim fadeDown" data-cont="#b-2-2h2">
+					<img src="i/direct-1.jpg" data-retina="i/direct-1@2x.jpg">
+					<p class="b-dif-text">Вы <a href="#b-popup-2" class="fancy goal-click" data-goal="REQUEST_OPEN"><b>оставляете заявку</b></a> на поиск тура</p>
+				</div>
+				<div class = "explanation clearfix anim fadeDown delay200" data-cont="#b-2-2h2">
+					<img src="i/direct-2.jpg" data-retina="i/direct-2@2x.jpg">
+					<p class="b-dif-text">Наш менеджер подбирает для вас <b>лучший тур</b> под все ваши запросы</p>
+				</div>
+				<div class = "explanation clearfix anim fadeDown delay400" data-cont="#b-2-2h2">
+					<img src="i/direct-3.jpg" data-retina="i/direct-3@2x.jpg">
+					<p class="b-dif-text">Мы бронируем путевку <b>по цене туроператора</b></p>
+				</div>
+			</div>
+			<p class="b-subtitle payoff"><b>Вы не платите комиссию</b> нашим менеджерам: за вас это делает туроператор</p>
+		</div>
+	</div>
+	<div class="b-block">
+		<img id="b-title-logo" class="b-title-logo" src="i/logo-big.svg" data-enllax-ratio=".15" data-enllax-type="foreground" data-enllax-direction="vertical">
+	</div>
+	<div class="b b-3">
+		<div class="b-block">
+			<h2 class="b-header-h2">Чем <b>турагентство «Отдых круглый год»</b> отличается от обычных банков туров?</h2>
+			<div class="b-differences clearfix">
+				<div class="b-difference">
+					<div class="b-money anim fadeDown" data-cont=".b-3">
+					</div>
+					<h4 class="b-dif-title anim fadeDown delay100" data-cont=".b-3">Железная цена,<br> никаких скрытых доплат</h4>
+					<p class="b-dif-text anim fadeDown delay200" data-cont=".b-3">Вы платите <b>только стоимость тура</b>, которую устанавливает туроператор и ни копейки больше.</p>
+				</div>
+				<div class="b-difference">
+					<div class="b-docs anim fadeDown delay400" data-cont=".b-3">
+					</div>
+					<h4 class="b-dif-title anim fadeDown delay500" data-cont=".b-3">Бесплатная помощь при оформлении тура</h4>
+					<p class="b-dif-text anim fadeDown delay600" data-cont=".b-3">Подбор и бронирование тура, оформление документов, а также сопровождение на протяжении всего путешествия – <b>бесплатно.</b> </p>
+				</div>
+			</div>
+			<div class="b-bottom-b-3 clearfix">
+				<div class="b-julia anim fadeDown" data-cont=".b-bottom-b-3">
+					<div class="b-post anim fadeRight delay600" data-cont=".b-bottom-b-3">менеджер турагентства «Отдых круглый год»</div>
+					<div class="b-name anim fadeRight delay500" data-cont=".b-bottom-b-3">Юлия Лозовая</div>
+				</div>
+				<div class="p-description">
+					<p class="b-header-h3"><b>Опытные эксперты</b> по направлению&nbsp;<?=$site->name?> </p> 
+					<p class="b-text">Наши менеджеры <b>знают абсолютно все<br> об отдыхе <?=$site->nameRod?>: </b>где находятся самые чистые пляжи,<br> как и где дешевле записаться на экскурсию и т.д.</p>
+				</div>
+			</div>
+			<div class="b-bottom-b-3-m">
+				<div class="b-expert">
+					<div class="b-circle">
+						<div class="b-expert-cont">
+							<img src="i/julia-mobile.png" class="b-expert-pic anim fadeDown"  data-retina="i/julia-mobile@2x.png">
+						</div>
+					</div>
+				</div>
+				<h4 class="b-dif-title"><b>Опытные эксперты</b> по направлению&nbsp;<?=$site->name?></h4>
+				<p class="b-dif-text">Наши менеджеры <b>знают абсолютно всё об отдыхе <?=$site->nameRod?>: </b>где находятся самые чистые пляжи, как и где дешевле записаться на экскурсию и т.д.</p>
+			</div>
+		</div>
+	</div>
+	<div class="b b-4">
+		<div id="particles-js"></div>	
+		<div class="b-block">
+			<h2 class="b-header-h2">Посмотрите <b>отзывы туристов</b>, которые уже&nbsp;доверились нашему турагентству</h2>
+		</div>
+		<div class="b-reviews">
+			<div class="b-review">
+				<div class="b-block">
+					<div class="wrapper">
+						<div class="b-r-wrap"> 
+							<div class="b-r-photo-1"></div>
+							<p class="b-r-name">Алёна Шаипова<br>
+							<noindex><a href="https://vk.com/id11474406" class="b-r-link" target="_blank">ссылка VK</a></noindex></p>
+						</div>
+						<p class="b-r-header slider-anim fadeDown">«Это было лучше, чем в раю! Всем советую»</p>
+						<p class="b-r-text slider-anim fadeDown delay200">Выражаю огромную благодарность турагентству «Отдых круглый год» за мой первый великолепный отдых. Отель на первой линии, хороший район, шикарный пляж, через дорогу шикарное море... Это было лучше, чем в раю! Спасибо от души, всем советую это туристическое агентство.</p>
+					</div>
+				</div>
+			</div>
+			<div class="b-review">
+				<div class="b-block">
+					<div class="wrapper">
+						<div class="b-r-wrap"> 
+							<div class="b-r-photo-2"></div>
+							<p class="b-r-name">Марта Казакова<br>
+							<noindex><a href="https://vk.com/id18874055" class="b-r-link" target="_blank">ссылка VK</a></noindex></p>
+						</div>
+						<p class="b-r-header slider-anim fadeDown">«Спасибо за отличную организацию нашего отпуска»</p>
+						<p class="b-r-text slider-anim fadeDown delay200">Очень понравилось работать с Юлией! Терпеливый менеджер, который подберёт идеальный вариант даже для самых капризных клиентов. Всё изучит, позвонит узнает нюансы, которые важны для клиентов... В общем, спасибо за отличную организацию нашего отпуска!</p>
+					</div>
+				</div>
+			</div>
+			<div class="b-review">
+				<div class="b-block">
+					<div class="wrapper">
+						<div class="b-r-wrap"> 
+							<div class="b-r-photo-3"></div>
+							<p class="b-r-name">Арина Чикурова<br>
+							<noindex><a href="https://vk.com/arniechi" class="b-r-link" target="_blank">ссылка VK</a></noindex></p>
+						</div>
+						<p class="b-r-header slider-anim fadeDown">«Остались так довольны, что решили снова обратиться к вам»</p>
+						<p class="b-r-text slider-anim fadeDown delay200">Мы обратились в первый раз в связи со свадебным путешествием и остались так довольны, что с появлением новой возможности поехать отдыхать решили снова обратиться к агенту Юлии Лозовой. Её компетентность, индивидуальный подход и приятная индивидуальность - неоспоримы! </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#b-popup-2" class="b-button orange relax fancy goal-click" data-goal="WANTSAME_OPEN">
+			<p class="button-bold">Хочу так же отдохнуть</p>
+			<p class="button-thin">подберите мне тур</p>
+		</a>
+	</div>
+	<div class="b b-5">
+		<div class="b-block">
+			<h2 class="b-header-h2"><b>Над вашим отдыхом</b> будут работать лучшие в&nbsp;своем деле <b>эксперты</b></h2>
+			<div class="b-experts">
+				<div class="b-expert-1-wrap clearfix">
+					<div class="b-expert">
+						<div id="circle" class="b-circle">
+							<div class="b-expert-cont">
+								<img src="i/julia-2.png" id="expert" class="b-expert-pic" data-enllax-ratio="-0.07" data-enllax-type="foreground" data-enllax-direction="vertical" data-retina="i/julia-2@2x.png">
+							</div>
+						</div>
+					</div>
+					<div class="b-expert-quote-wrap">
+						<div class="line-1 anim width-1" data-cont=".b-5"></div>
+						<div id="expert-name" class="b-expert-name anim fadeDown delay500" data-cont=".b-5">Юлия Лозовая</div>
+						<div id="expert-quote" class="b-expert-quote anim fadeDown delay600" data-cont=".b-5">«Я счастлива от того, что делаю людей&nbsp;счастливыми»</div>
+						<div id="question-button" class="anim fadeRight delay800" data-cont=".b-5">
+							<a id="link-1" href="#b-popup-3" class="b-button orange question fancy left anim fadeRight goal-click" data-goal="JULIA_OPEN" data-cont=".b-5">
+								<p class="button-bold">Задать вопрос</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="b-expert-1-wrap clearfix">
+					<div class="b-expert right">
+						<div id="circle-2" class="b-circle">
+							<div class="b-expert-cont">
+								<img src="i/kate.png" id="expert-2" class="b-expert-pic-2" data-enllax-ratio="0.07" data-enllax-type="foreground" data-enllax-direction="vertical" data-retina="i/kate@2x.png">
+							</div>
+						</div>
+					</div>
+					<div class="b-expert-quote-wrap">
+						<div class="line-2 anim width-2" data-cont=".line-2"></div>
+						<div id="expert-name-2" class="b-expert-name anim fadeDown" data-cont=".line-2">Екатерина Белозёрова</div>
+						<div id="expert-quote-2" class="b-expert-quote anim fadeDown delay100" data-cont=".line-2">«С детства мечтала знать всё о всех странах&nbsp;мира, теперь хочу поделиться этим&nbsp;с&nbsp;моими клиентами»</div>
+						<div id="question-button-2" class="anim fadeLeft delay300" data-cont=".line-2">
+							<a href="#b-popup-4" class="b-button orange question left fancy goal-click" data-goal="KATE_OPEN">
+								<p class="button-bold">Задать вопрос</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b b-6 anim" data-anim="footer-animate" data-offset="70">
+		<div class="b-block clearfix">
+			<div class="b-left">
+				<p class="b-header-h2-b-6">Запишитесь на встречу в нашем офисе</p>
+				<p class="b-header-h2-b-6-2"></p>
+				<p class="b-subtitle-b-6">и мы бесплатно пришлем за вами автомобиль с личным водителем</p>
+				<p class="b-subtitle-b-6-2"></p>
+			</div>
+			<div class="b-car fadeLeft anim delay2000" data-cont=".b-6" data-offset="-50px"></div>
+			<div class="b-right fadeDown anim delay2800" data-cont=".b-6" data-offset="-50px">
+				<p class="b-form-header">Заполните простую форму</p>
+				<p class="b-form-subtitle">И наш менеджер свяжется с вами в течение 2&nbsp;минут и предложит удобное время</p>
+				<form action="kitsend.php" method="POST" data-goal="BOTTOM" id="b-form-1">	
+					<input class="b-form-input ym-record-keys" type="text" id="name" name="name" required placeholder="Ваше имя*">
+					<input class="b-form-input ym-record-keys" type="text" id="tel" name="phone" required placeholder="Ваш телефон*">
+					<div class="b-office">	
+						<a href="#" class="b-button orange meeting ajax">
+							<p class="button-bold">Записаться на встречу</p>
+							<p class="button-thin">бесплатно в нашем офисе</p>
+						</a>
+						<a href="#b-popup-success" class="b-thanks-link fancy" style="display:none;"></a>
+						<p class="small">Это просто и ни к чему не обязывает</p>
+					</div>
+					<input type="submit" style="display: none;">
+					<input type="hidden" name="subject" value="Форма с личным авто">
+					<input required checked id="agree" class="agree" type="checkbox" name="agreement">
+					<label for="agree"><p class="b-condition">Я принимаю <a href="https://kru-god.ru/politics/" target="_blank">условия передачи информации</a></p></label>
+				</form>	
+			</div>
+			<div class="b-footer clearfix">
+				<a href="#" class="b-logo-cont"><img src="i/logo-black.svg"></a>
+				<div class="b-f-contacts">
+					<ul>
+						<li>г. Томск, пр. Кирова, 58 ст. 26,<br> офис 21, 2 этаж</li>
+						<li>Остались вопросы? Звоните&nbsp;+7&nbsp;(3822)&nbsp;909-303</li>
+						<li><a href="https://kru-god.ru/politics/" target="_blank">Политика по работе с персональными данными</a></li>
+					</ul>
+				</div>
+				<a class="b-redder">Разработка сайта: <b>redder.pro</b></a>
+			</div>
+		</div>
+	</div>
+
+	<? endif; ?>
 
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
 		<a href="#b-popup-preloader" class="b-preloader-link fancy"></a>
 		<a href="#b-popup-6" class="fancy pop6" style="display: none"></a>
-		<!-- <div class="b-popup" id="b-popup-1">
+		<div class="b-popup" id="b-popup-1">
 			<form action="kitsend.php" method="POST" data-goal="MEETING" id="b-form-1">
 				<div class="b-left" id="typed-strings">
-					<h2 class="b-header-h2"><b>Узнайте подробнее<br></b> о путешествии по Китаю</h2>
+					<h2 class="b-header-h2"><b>Узнайте подробнее<br></b> о путешествии <?=$site->route?></h2>
 					<h3 class="b-subtitle">Наши эксперты готовы проконсультировать вас <b>абсолютно&nbsp;бесплатно.</b></h3>
 				</div>
 				
@@ -118,9 +351,9 @@ $version = 15;
 					<label for="agree-1"><p class="b-condition">Я принимаю <a href="https://kru-god.ru/politics/" target="_blank">условия передачи информации</a></p></label>
 				</div>
 			</form>
-		</div> -->
+		</div>
 
-		<!-- <div class="b-popup" id="b-popup-2">
+		<div class="b-popup" id="b-popup-2">
 			<form action="kitsend.php" method="POST" data-goal="WANTSAME" id="b-form-2">
 				<div class="b-left">
 					<h2 class="b-header-h2">Подберем лучший<br>тур под<b> все ваши запросы</b></h2>
@@ -146,9 +379,9 @@ $version = 15;
 					<label for="agree-2"><p class="b-condition">Я принимаю <a href="https://kru-god.ru/politics/" target="_blank">условия передачи информации</a></p></label>
 				</div>
 			</form>
-		</div> -->
+		</div>
 
-		<!-- <div class="b-popup b-orange-popup" id="b-popup-3">
+		<div class="b-popup b-orange-popup" id="b-popup-3">
 			<form action="kitsend.php" method="POST" data-goal="JULIA" id="b-form-3">			
 				<div class="b-right">
 					<p class="b-form-header">Напишите Юлии – старшему менеджеру турагентства</p>
@@ -198,7 +431,7 @@ $version = 15;
 					<label for="agree-4"><p class="b-condition">Я принимаю <a href="https://kru-god.ru/politics/" target="_blank">условия передачи информации</a></p></label>
 				</div>
 			</form>
-		</div> -->
+		</div>
 
 		<div class="b-popup b-orange-popup" id="b-popup-5">
 			<form action="kitsend.php" method="POST" data-goal="CALLME" id="b-form-5">			
@@ -323,7 +556,7 @@ $version = 15;
 					<div class="quiz-screen scr-4 clearfix">
 						<div class="b-left" id="typed-strings">
 							<h2 class="b-header-h2"><b>Остался всего один&nbsp;шаг!</b></h2>
-							<h3 class="b-subtitle"><b>До 30 августа</b> мы дарим всем своим клиентам приятный подарок: <b>бесплатный трансфер</b> до&nbsp;Толмачево&nbsp;и&nbsp;обратно, <b>независимо&nbsp;от&nbsp;даты&nbsp;</b>вылета.</h3>
+							<h3 class="b-subtitle"><b>До 15 октября</b> мы дарим всем своим клиентам приятный подарок: <b>бесплатный трансфер</b> до&nbsp;Толмачево&nbsp;и&nbsp;обратно, <b>независимо&nbsp;от&nbsp;даты&nbsp;</b>вылета.</h3>
 							<div class="b-bus"></div>
 						</div>
 						
@@ -369,7 +602,7 @@ $version = 15;
 			<form action="kitsend.php" method="POST" data-goal="TRANSFER" id="b-form-6">
 				<div class="b-left" id="typed-strings">
 					<h2 class="b-header-h2">Не уходите <b>с&nbsp;пустыми&nbsp;руками</b></h2>
-					<h3 class="b-subtitle"><b>До 30 июля</b> мы дарим всем своим клиентам приятный подарок: <b>бесплатный трансфер</b> до&nbsp;Толмачево&nbsp;и&nbsp;обратно, <b>независимо&nbsp;от&nbsp;даты&nbsp;</b>вылета.</h3>
+					<h3 class="b-subtitle"><b>До 15 октября</b> мы дарим всем своим клиентам приятный подарок: <b>бесплатный трансфер</b> до&nbsp;Толмачево&nbsp;и&nbsp;обратно, <b>независимо&nbsp;от&nbsp;даты&nbsp;</b>вылета.</h3>
 					<div class="transfer"></div>
 				</div>
 				
@@ -415,7 +648,10 @@ $version = 15;
 			</div>
 		</div>
 	</div>
-
+	
+	<script>
+		var ya = null;
+	</script>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 	<script type="text/javascript" src="js/jquery.touch.min.js"></script>
@@ -436,13 +672,15 @@ $version = 15;
 	    (function (d, w, c) {
 	        (w[c] = w[c] || []).push(function() {
 	            try {
-	                w.yaCounter49375867 = new Ya.Metrika2({
-	                    id:49375867,
+	                w.yaCounter<?=$site->metrika?> = new Ya.Metrika2({
+	                    id:<?=$site->metrika?>,
 	                    clickmap:true,
 	                    trackLinks:true,
 	                    accurateTrackBounce:true,
 	                    webvisor:true
 	                });
+
+	                ya = yaCounter<?=$site->metrika?>;
 	            } catch(e) { }
 	        });
 
@@ -459,7 +697,7 @@ $version = 15;
 	    })(document, window, "yandex_metrika_callbacks2");
 	</script>
 	<? endif; ?>
-	<noscript><div><img src="https://mc.yandex.ru/watch/49375867" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<noscript><div><img src="https://mc.yandex.ru/watch/<?=$site->metrika?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
 	<!-- Begin LeadBack code {literal} -->
 	<script>

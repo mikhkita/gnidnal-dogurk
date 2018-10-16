@@ -1,6 +1,6 @@
-var isDesktop = false,
-    isTablet = false,
-    isMobile = false;
+var     isDesktop = false,
+        isTablet = false,
+        isMobile = false;
 
 $(document).ready(function(){	
     function resize(){
@@ -20,14 +20,10 @@ $(document).ready(function(){
             isDesktop = true;
             isTablet = false;
             isMobile = false;
-
-            $("body").addClass("is-desktop");
         }else{
             isDesktop = false;
             isTablet = false;
             isMobile = true;
-
-            $("body").removeClass("is-desktop");
         }
     }
     $(window).resize(resize);
@@ -64,18 +60,18 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
-    $(".b-reasons").slick({
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchThreshold: 100,
-        arrows: true,
-        dots: true,
-        easing: 'easeOutQuart',
-        useTransform: false,
-        prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
+    $( " .b-reasons " ).slick({
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    touchThreshold: 100,
+                    arrows: true,
+                    dots: true,
+                    easing: 'easeOutQuart',
+                    useTransform: false,
+                    prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
     });
 
     $(".b-reason[data-slick-index='0'] .slider-anim").addClass("show");
@@ -85,20 +81,20 @@ $(document).ready(function(){
         $(".b-reason[data-slick-index='"+currentSlide+"'] .slider-anim").addClass("show");
     });
 
-    $(".b-reviews").slick({
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        touchThreshold: 100,
-        arrows: true,
-        dots: true,
-        easing: 'easeOutQuart',
-        useTransform: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
+    $( " .b-reviews " ).slick({
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    touchThreshold: 100,
+                    arrows: true,
+                    dots: true,
+                    easing: 'easeOutQuart',
+                    useTransform: false,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
     });
 
     $(".b-review[data-slick-index='0'] .slider-anim").addClass("show");
@@ -108,56 +104,55 @@ $(document).ready(function(){
         $(".b-review[data-slick-index='"+currentSlide+"'] .slider-anim").addClass("show");
     });
 
-    if( $("#particles-js").length ){
-        particlesJS.load('particles-js', 'js/particles.json', function() {});
-    }
+    // particlesJS.load('particles-js', 'js/particles.json', function() {
+    // });
     
-    var circleWidth = 0;
-    function circleWidthDeterm(){
-        var circle = document.getElementById("circle");
-        circleWidth = circle.offsetWidth;
-        document.getElementById('circle').style.height = circleWidth+'px';
-        var circle2 = document.getElementById("circle-2");
-        circleWidth = circle2.offsetWidth;
-        document.getElementById('circle-2').style.height = circleWidth+'px';
-        var circle3 = document.getElementById("circle-3");
-        circleWidth = circle3.offsetWidth;
-        document.getElementById('circle-3').style.height = circleWidth+'px';
-    }
-    if( $("#circle").length ){
-        circleWidthDeterm();
-    }
+    // var circleWidth = 0;
+    // function circleWidthDeterm(){
+    //     var circle = document.getElementById("circle");
+    //     circleWidth = circle.offsetWidth;
+    //     document.getElementById('circle').style.height = circleWidth+'px';
+    //     var circle2 = document.getElementById("circle-2");
+    //     circleWidth = circle2.offsetWidth;
+    //     document.getElementById('circle-2').style.height = circleWidth+'px';
+    //     var circle3 = document.getElementById("circle-3");
+    //     circleWidth = circle3.offsetWidth;
+    //     document.getElementById('circle-3').style.height = circleWidth+'px';
+    // }
+    // circleWidthDeterm();
    
     if (isDesktop) {
-        $('#b-title-logo').enllax();
-        $('#expert').enllax();
-        $('#expert-2').enllax();
-    };
+            $('#b-title-logo').enllax();
+            $('#expert').enllax();
+            $('#expert-2').enllax();
+        };
     if (isMobile){
-        document.getElementById('expert').className = ('b-expert-pic anim fadeDown');
-        document.getElementById('expert').setAttribute('data-cont', '#circle');
-        document.getElementById('expert-name').setAttribute('data-cont', '#circle');
-        document.getElementById('expert-name').className = ('b-expert-name anim fadeDown delay100');
-        document.getElementById('expert-quote').setAttribute('data-cont', '#circle');
-        document.getElementById('expert-quote').className = ('b-expert-quote anim fadeDown delay200');
-        document.getElementById('question-button').setAttribute('data-cont', '#circle');
-        document.getElementById('question-button').className = ('anim fadeDown delay400');
+        // document.getElementById('expert').className = ('b-expert-pic anim fadeDown');
+        // document.getElementById('expert').setAttribute('data-cont', '#circle');
+        // document.getElementById('expert-name').setAttribute('data-cont', '#circle');
+        // document.getElementById('expert-name').className = ('b-expert-name anim fadeDown delay100');
+        // document.getElementById('expert-quote').setAttribute('data-cont', '#circle');
+        // document.getElementById('expert-quote').className = ('b-expert-quote anim fadeDown delay200');
+        // document.getElementById('question-button').setAttribute('data-cont', '#circle');
+        // document.getElementById('question-button').className = ('anim fadeDown delay400');
 
-        document.getElementById('expert-2').className = ('b-expert-pic-2 anim fadeDown');
-        document.getElementById('expert-2').setAttribute('data-cont', '#circle-2');
-        document.getElementById('expert-name-2').setAttribute('data-cont', '#circle-2');
-        document.getElementById('expert-name-2').className = ('b-expert-name anim fadeDown delay100');
-        document.getElementById('expert-quote-2').setAttribute('data-cont', '#circle-2');
-        document.getElementById('expert-quote-2').className = ('b-expert-quote anim fadeDown delay200');
-        document.getElementById('question-button-2').setAttribute('data-cont', '#circle-2');
-        document.getElementById('question-button-2').className = ('anim fadeDown delay400');
 
-        document.getElementById('link-1').className = ('b-button orange question fancy left');
-        document.getElementById('link-1').setAttribute('data-cont', ' ');
+
+        // document.getElementById('expert-2').className = ('b-expert-pic-2 anim fadeDown');
+        // document.getElementById('expert-2').setAttribute('data-cont', '#circle-2');
+        // document.getElementById('expert-name-2').setAttribute('data-cont', '#circle-2');
+        // document.getElementById('expert-name-2').className = ('b-expert-name anim fadeDown delay100');
+        // document.getElementById('expert-quote-2').setAttribute('data-cont', '#circle-2');
+        // document.getElementById('expert-quote-2').className = ('b-expert-quote anim fadeDown delay200');
+        // document.getElementById('question-button-2').setAttribute('data-cont', '#circle-2');
+        // document.getElementById('question-button-2').className = ('anim fadeDown delay400');
+
+        // document.getElementById('link-1').className = ('b-button orange question fancy left');
+        // document.getElementById('link-1').setAttribute('data-cont', ' ');
     };
-    $(window).resize(function () {
-        circleWidthDeterm();
-    });
+    // $(window).resize(function () {
+    //     circleWidthDeterm();
+    // });
 // custom["footer-animate"] = function(){
 //     var typed = new Typed("#typed-show", {
 //         // strings: ['npm install^1000\n `installing components...` ^1000\n `Fetching from source...`'],
@@ -175,83 +170,79 @@ $(document).ready(function(){
 //             typeSpeed: 5,
 //             showCursor: false
 //         });
-    
-    if( $(".b-header-h2-b-6").length ){
-        var elem =  document.getElementsByClassName('b-header-h2-b-6')[0];
-        var str = elem.innerText;
-        var symbols = str.split("");
-        var body = document.getElementsByClassName('b-header-h2-b-6-2')[0];
-        var delay = 0;
+    // var elem =  document.getElementsByClassName('b-header-h2-b-6')[0];
+    // var str = elem.innerText;
+    // var symbols = str.split("");
+    // var body = document.getElementsByClassName('b-header-h2-b-6-2')[0];
+    // var delay = 0;
 
-        symbols.forEach(function(item, i, arr) {
-            
-              var span = document.createElement('span');
-              span.innerHTML = item;
-              span.className = 'lol anim fadeIn';
-              span.setAttribute('data-cont', '.b-6');
-              span.style.transitionDelay = delay+'ms';
-              if (i < 21) {
-                span.style.fontFamily = 'Gilroy-Bold'
-              };
-              body.appendChild(span);
-              console.log(item);
-              delay += 20;
-        });
-        
-        var elem =  document.getElementsByClassName('b-subtitle-b-6')[0];
-        var str = elem.innerText;
-        var symbols = str.split("");
-        var body = document.getElementsByClassName('b-subtitle-b-6-2')[0];
-        var delay = 680;
-        symbols.forEach(function(item, i, arr) {
-            var span = document.createElement('span');
-            span.innerHTML = item;
-            span.className = 'lol anim fadeIn';
-            span.setAttribute('data-cont', '.b-6');
-            span.style.transitionDelay = delay+'ms';
-            if (i > 4 && i < 14) {
-                span.style.fontFamily = 'Gilroy-Bold'
-            }
-            body.appendChild(span);
-            console.log(item);
-            delay += 20;
-        });
-    }
-
+    // // symbols.forEach(function(item, i, arr) {
+    // //     delays.push();
+    // // }
     // symbols.forEach(function(item, i, arr) {
-    //     delays.push();
-    // }
+        
+    //       var span = document.createElement('span');
+    //       span.innerHTML = item;
+    //       span.className = 'lol anim fadeIn';
+    //       span.setAttribute('data-cont', '.b-6');
+    //       span.style.transitionDelay = delay+'ms';
+    //       if (i < 21) {
+    //         span.style.fontFamily = 'Gilroy-Bold'
+    //       };
+    //       body.appendChild(span);
+    //       console.log(item);
+    //       delay += 20;
+    // });
+    
+    // var elem =  document.getElementsByClassName('b-subtitle-b-6')[0];
+    // var str = elem.innerText;
+    // var symbols = str.split("");
+    // var body = document.getElementsByClassName('b-subtitle-b-6-2')[0];
+    // var delay = 680;
+    // symbols.forEach(function(item, i, arr) {
+        
+    //       var span = document.createElement('span');
+    //       span.innerHTML = item;
+    //       span.className = 'lol anim fadeIn';
+    //       span.setAttribute('data-cont', '.b-6');
+    //       span.style.transitionDelay = delay+'ms';
+    //       if (i > 4 && i < 14) {
+    //         span.style.fontFamily = 'Gilroy-Bold'
+    //       };
+    //       body.appendChild(span);
+    //       console.log(item);
+    //       delay += 20;
+    // });
 
     var isWindows = false,
-        timerLeave = false,
-        showLeave = false,
-        inputFocus = false;
+        timerLeave = 0,
+        showLeave = true;
+        inputFocus= false;
 
     $( "input" ).focus(function() {
         inputFocus = true;
         showLeave = false;
-    });
-
-    $( "input" ).blur(function() {
-        if( !timerLeave )
-            showLeave = true;
-    });
+      });
 
 
 
     if (navigator.userAgent.indexOf ('Windows') != -1) isWindows = true;
 
-    setTimeout(function() {
-        timerLeave = true;
-        showLeave = true;
-    }, 10000);
-
-    $(document).mouseleave(function(){
-        if(!$(".fancybox-slide .b-popup").length && showLeave){
-            $(".pop6").click();
-            showLeave = false;
+    setInterval(function() {
+        timerLeave++;
+        if(timerLeave > 120){
+            showLeave = true;
+            timerLeave = 0;
         }
-    });
+    }, 1000);
+
+    // $(document).mouseleave(function(){
+    //     if(!$(".fancybox-slide .b-popup").length && showLeave){
+    //         $(".pop6").click();
+    //         showLeave = false;
+    //         timerLeave = 0;
+    //     }
+    // });
 
     isRetina = retina();
 
@@ -328,8 +319,6 @@ $(document).ready(function(){
                 $next.find("input[type='text']").eq(0).focus();
             }
         }
-
-        return false;
     });
     $(".b-button.submit").click(function(){
         $(".quiz-screen").hide();
@@ -340,9 +329,9 @@ $(document).ready(function(){
     $("#b-quiz .radio").click(function(){
         if (!startQuiz) {
             startQuiz = true;
-            if(ya !== null ){
+            if(typeof yaCounter49375867 != "undefined" ){
                 console.log("send goal: " + "CALC_START");
-                ya.reachGoal("CALC_START");
+                yaCounter49375867.reachGoal("CALC_START");
             }
         }
     });
@@ -351,21 +340,21 @@ $(document).ready(function(){
     $(".scr-4 .b-form-input").change(function(){
         if (!quizInput) {
             quizInput = true;
-            if(ya !== null ){
+            if(typeof yaCounter49375867 != "undefined" ){
                 console.log("send goal: CALC_END");
-                ya.reachGoal("CALC_END");
+                yaCounter49375867.reachGoal("CALC_END");
             }
         }
     });
 
-    var togScroll = false;
-    customHandlers["onScroll"] = function(scroll){
-        if (scroll > 300 && !togScroll && ya !== null) {
-            togScroll = true;
-            console.log("send goal: SCROLL");
-            ya.reachGoal("SCROLL");
-        }
-    }
+    // var togScroll = false;
+    // customHandlers["onScroll"] = function(scroll){
+    //     if (scroll > 300 && !togScroll && typeof yaCounter49375867 != "undefined") {
+    //         togScroll = true;
+    //         console.log("send goal: SCROLL");
+    //         yaCounter49375867.reachGoal("SCROLL");
+    //     }
+    // }
 
 
     // $("body").children().each(function() {

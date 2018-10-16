@@ -82,23 +82,15 @@ $data = array(
 	"REGION" => (object) array(
 		"values" => array(
 			(object) array(
-				"value" => "на Пхукет",
-				"keys" => array("пхук"),
+				"value" => "на Гоа",
+				"keys" => array("гоа"),
 			),
 			(object) array(
-				"value" => "в Паттайю",
-				"keys" => array("патта"),
+				"value" => "в Кералу",
+				"keys" => array("керал"),
 			),
 			(object) array(
-				"value" => "в Бангкок",
-				"keys" => array("банг"),
-			),
-			(object) array(
-				"value" => "в Тайланд",
-				"keys" => array("тайланд"),
-			),
-			(object) array(
-				"value" => "в Таиланд",
+				"value" => "в Индию",
 				"keys" => NULL,
 			),
 		)
@@ -279,14 +271,8 @@ $data = array(
 				"keys" => array("2019"),
 			),
 			(object) array(
-				"value" => "по цене туроператора",
+				"value" => "от туроператора",
 				"keys" => NULL,
-				"exclude" => array("стоит", "стоят", "цен", "почем", "почём"),
-			),
-			(object) array(
-				"value" => "по цене туроператора",
-				"keys" => NULL,
-				"exclude" => array("стоит", "стоят", "цен", "почем", "почём"),
 			),
 		)
 	)

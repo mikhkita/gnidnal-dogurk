@@ -1,34 +1,54 @@
 <?php
 require_once("phpmail.php");
+require_once("init.php");
+
+if( !isset($_POST["phone"]) && !isset($_POST["name"]) && !isset($_POST["email"]) ){
+	die();
+}
+
+$site = getSite();
 
 session_start();
+
+if( isset($_SESSION["source"]) && $_SESSION["source"] != "" ){
+	$tmp = explode("%", $_SESSION["source"]);
+	if( count($tmp) > 3 ){
+		$_SESSION["source"] = urldecode($_SESSION["source"]);
+	}
+}
 
 $users = array(
 	(object)array(
 		"id" => 1498240,
 		"name" => "Юлия Лозовая",
 		"login" => "kru-god-j@yandex.ru",
-		"hash" => "5e4bd85e87b81e95357719fbdd1f85f5",
+		"hash" => "25b85527a277def44cbcef3c3618668bbe218b0f",
 	), // Юля
 	(object)array(
 		"id" => 2204893,
 		"name" => "Екатерина Белозёрова",
 		"login" => "ekaterina1.belozerova@aiesec.net",
-		"hash" => "387b6f825977c37ff495c73fb7152f0b",
+		"hash" => "7f24dece7c322359c58fd56d24dd2b01e916b0fa",
 	), // Катя
 );
 
-$id = intval(file_get_contents("amo.txt"));
-$id = ( $id + 1 >= count($users) )?0:($id + 1);
-file_put_contents("amo.txt", $id);
+if( !isset($_SESSION["ID"]) ){
+	$id = intval(file_get_contents("amo.txt"));
+	$id = ( $id + 1 >= count($users) )?0:($id + 1);
+	file_put_contents("amo.txt", $id);
+
+	$_SESSION["ID"] = $id;
+}else{
+	$id = $_SESSION["ID"];
+}
 
 $user = $users[$id];
 
-$email_admin = "dima@redder.pro";
+$email_admin = "mike@kitaev.pro";
 // $email_admin = "turizm-krugod@yandex.ru, mike@kitaev.pro";
 
-$from = "Лэндинг “Турция”";
-$email_from = "turkey@kru-god.ru";
+$from = "Лэндинг “".$site->name."”";
+$email_from = $site->code."@kru-god.ru";
 
 $chatid = "245407908";
 // $chatid = "-203450551";
@@ -66,6 +86,11 @@ if( count($_POST) ){
 
 	$message = "<div><h3 style=\"color: #333;\">".$title."</h3>";
 
+	foreach ($fields  as $key => $value){
+		$message .= "<div><p><b>".$key.": </b>".$value."</p></div>";
+		$text .= $key.": ".$value."\n";
+	}	
+
 	if( isset($_SESSION["source"]) && $_SESSION["source"] != "" ){
 			$message .= "<div><p><b>Источник: </b>".$_SESSION["source"]."</p></div>";
 		$text .= "Источник: ".$_SESSION["source"]."\n";
@@ -76,15 +101,10 @@ if( count($_POST) ){
 		$text .= "Ключевая фраза: ".$_SESSION["keyWord"]."\n";
 	}
 
-	foreach ($fields  as $key => $value){
-		$message .= "<div><p><b>".$key.": </b>".$value."</p></div>";
-		$text .= $key.": ".$value."\n";
-	}	
-
 	$message .= "<div><p><b>Ответственный:</b> ".$user->name."</p></div></div>";
 	$text .= "Ответственный: ".$user->name;
 	
-	if(send_mime_mail("Сайт ".$from,$email_from,"",$email_admin,'UTF-8','UTF-8',$subject,"Турция: ".$message,true) && sendMessage("Турция: ".$text)){	
+	if(send_mime_mail($from,$email_from,"",$email_admin,'UTF-8','UTF-8',$subject, $site->name.": ".$message,true) && sendMessage($site->name.": ".$text)){	
 		echo "1";
 	}else{
 		echo "0";
