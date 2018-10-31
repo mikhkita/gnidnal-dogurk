@@ -19,14 +19,13 @@
 			<div class="wrapper">
 				<div class="b-r-wrap clearfix"> 
 					<div class="b-r-video">
-						<div class="b-r-video-preview">
-							<a data-fancybox href="https://www.youtube.com/watch?v=x_B4yIdX6dU" class="ytb-btn" data-id="video-1"></a>
+						<a data-fancybox href="https://www.youtube.com/watch?v=x_B4yIdX6dU" class="b-r-video-preview">
+							<span class="ytb-btn" data-id="video-1"></span>
 							<img src="<?=$site->code?>/i/video-1.jpg">
-						</div>
-						<iframe id="video-1" style="opacity: 0" width="330" height="240" src="https://www.youtube.com/embed/Vk0VTuGPunY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</a>
 					</div>
 				</div>
-				<p class="b-r-header slider-anim fadeDown">«Обязательно воспользуемся услугами агентства еще раз»</p>
+				<p class="b-r-header slider-anim fadeDown">«Обязательно воспользуемся услугами агентства&nbsp;еще&nbsp;раз»</p>
 			</div>
 		</div>
 	</div>
@@ -50,11 +49,10 @@
 			<div class="wrapper">
 				<div class="b-r-wrap clearfix"> 
 					<div class="b-r-video">
-						<div class="b-r-video-preview">
-							<a data-fancybox href="https://www.youtube.com/watch?v=5NNmpoK5x3A" class="ytb-btn" data-id="video-1"></a>
+						<a data-fancybox href="https://www.youtube.com/watch?v=5NNmpoK5x3A" class="b-r-video-preview">
+							<span class="ytb-btn" data-id="video-1"></span>
 							<img src="<?=$site->code?>/i/video-2.jpg">
-						</div>
-						<iframe id="video-1" style="opacity: 0" width="330" height="240" src="https://www.youtube.com/embed/Vk0VTuGPunY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</a>
 					</div>
 				</div>
 				<p class="b-r-header slider-anim fadeDown">«Здесь здорово: море - теплое, погода - хорошая!»</p>

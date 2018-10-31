@@ -95,8 +95,17 @@ $(document).ready(function(){
         dots: true,
         easing: 'easeOutQuart',
         useTransform: false,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 4000,
+        responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            autoplay: false,
+            adaptiveHeight: true
+          }
+        }],
+
         prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
         nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
     });

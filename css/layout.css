@@ -943,26 +943,20 @@
 					}
 					.b-r-video{
 						position: relative;
+						margin: 0 auto;
+						display:  inline-block;
+						width:  100%;
 					}
 					.b-r-video-preview img{
-						top: 0px;
-						left: 0px;
-						position: absolute;
-						width: 330px;
-						height: 240px;
+						/* top: 0px; */
+						/* left: 0px; */
+						/* position: absolute; */
+						width: 100%;
+						max-width: 330px;
+						/* height: 240px; */
 						border-radius: 20px;
-					}
-					.b-r-video-preview img:after{
-						background-color: #000;
-						top: 0px;
-						left: 0px;
-						position: absolute;
-						width: 330px;
-						height: 240px;
-						border-radius: 20px;
-						opacity: 0.2;
-						z-index: 5;
-						content: " ";
+						display:  inline-block;
+						margin: 0 auto;
 					}
 					.b-r-name{
 						font-family: Gilroy-Bold;

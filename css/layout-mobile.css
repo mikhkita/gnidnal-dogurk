@@ -3,6 +3,9 @@
 body{
 	min-width: 240px;
 }
+	.slick-dots li{
+		margin-right: 5px;
+	}
 	.b-more{
 		display: none;
 	}
@@ -305,9 +308,7 @@ body{
 			.wrapper{
 				width: 100%;
 			}
-				.b-r-photo-1,
-				.b-r-photo-2,
-				.b-r-photo-3{
+				.b-r-photo{
 					width: 60px;
 			    	height: 60px;
 			    	margin: 0 auto;

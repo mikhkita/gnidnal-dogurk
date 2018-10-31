@@ -1,32 +1,31 @@
 <div class="b-reviews">
 	<div class="b-review">
-			<div class="b-block">
-				<div class="wrapper">
-					<div class="b-r-wrap clearfix"> 
-						<div class="b-r-photo">
-							<img src="<?=$site->code?>/i/tatiana-grishaeva.jpg">
-						</div>
-						<p class="b-r-name">Татьяна Гришаева</p>
-						<noindex><a href="https://vk.com/topic-63106152_30344734?post=69" class="b-r-link" target="_blank">ссылка VK</a></noindex></p>
-					</div>
-					<p class="b-r-header slider-anim fadeDown">«Добросовестное отношение<br> к обязанностям»</p>
-					<p class="b-r-text slider-anim fadeDown delay200">Хочу выразить свою благодарность Юле! Она очень ответственный работник и добросовестно относится к своим обязанностям! Я хотела отдохнуть с маленьким ребенком и в пределах определенной суммы, Юля подобрала достаточно большое количество вариантов в разные направления, при этом с хорошими отелями. Спасибо тебе, Юлечка, огромное!</p>
-				</div>
-			</div>
-		</div>
-	<div class="b-review">
 		<div class="b-block">
 			<div class="wrapper">
 				<div class="b-r-wrap clearfix"> 
 					<div class="b-r-video">
-						<div class="b-r-video-preview">
-							<a data-fancybox href="https://www.youtube.com/embed/Vk0VTuGPunY" class="ytb-btn" data-id="video-1"></a>
+						<a data-fancybox href="https://www.youtube.com/embed/Vk0VTuGPunY" class="b-r-video-preview">
+							<span class="ytb-btn" data-id="video-1"></span>
 							<img src="<?=$site->code?>/i/video-1.jpg">
-						</div>
-						<iframe id="video-1" style="opacity: 0" width="330" height="240" src="https://www.youtube.com/embed/Vk0VTuGPunY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</a>
 					</div>
 				</div>
 				<p class="b-r-header slider-anim fadeDown">«Хороший тур, замечательный отель и прекрасный пляж»</p>
+			</div>
+		</div>
+	</div>
+	<div class="b-review">
+		<div class="b-block">
+			<div class="wrapper">
+				<div class="b-r-wrap clearfix"> 
+					<div class="b-r-photo">
+						<img src="<?=$site->code?>/i/tatiana-grishaeva.jpg">
+					</div>
+					<p class="b-r-name">Татьяна Гришаева<br>
+					<noindex><a href="https://vk.com/topic-63106152_30344734?post=69" class="b-r-link" target="_blank">ссылка VK</a></noindex></p>
+				</div>
+				<p class="b-r-header slider-anim fadeDown">«Добросовестное отношение<br> к обязанностям»</p>
+				<p class="b-r-text slider-anim fadeDown delay200">Хочу выразить свою благодарность Юле! Она очень ответственный работник и добросовестно относится к своим обязанностям! Я хотела отдохнуть с маленьким ребенком и в пределах определенной суммы, Юля подобрала достаточно большое количество вариантов в разные направления, при этом с хорошими отелями. Спасибо тебе, Юлечка, огромное!</p>
 			</div>
 		</div>
 	</div>
