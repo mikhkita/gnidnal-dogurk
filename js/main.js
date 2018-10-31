@@ -95,7 +95,7 @@ $(document).ready(function(){
         dots: true,
         easing: 'easeOutQuart',
         useTransform: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         prevArrow: '<button type="button" class="slick-prev icon-arrow-left">Previous</button>',
         nextArrow: '<button type="button" class="slick-next icon-arrow-right">Previous</button>'
@@ -217,6 +217,18 @@ $(document).ready(function(){
             delay += 20;
         });
     }
+
+   // $('.ytb-btn').on('click', function() {
+   //  id = $(this).attr('data-id');
+   //      $(this).parent().hide();
+   //      PlayVideo(id)
+   //  });
+   //  function PlayVideo(id) {
+   //          $("#"+id).css("opacity", "1");
+   //          src = $("#"+id).attr("src");
+   //          src += "?autoplay=1";
+   //          $("#"+id).attr("src", src);
+   //  }
 
     // symbols.forEach(function(item, i, arr) {
     //     delays.push();

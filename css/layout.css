@@ -929,44 +929,40 @@
 				.b-r-wrap{
 					display: inline-block;
 				}
-					.b-r-photo-1{
+					.b-r-photo{
 						width: 91px;
 						height: 91px;
 						border-radius: 90px;
 						border: 1px solid #ffffff;
-						background-image: url(../i/alena.jpg);
-						background-repeat: no-repeat;
-						background-position: 50% 50%;
-						background-size: cover;
 						overflow: hidden;
 						display: inline-block;
 						float: left;
 					}
-					.b-r-photo-2{
-						width: 91px;
-						height: 91px;
-						border-radius: 90px;
-						border: 1px solid #ffffff;
-						background-image: url(../i/marta@2x.jpg);
-						background-repeat: no-repeat;
-						background-position: 50% 50%;
-						background-size: cover;
-						overflow: hidden;
-						display: inline-block;
-						float: left;
+					.b-r-photo img{
+						width: 100%;
 					}
-					.b-r-photo-3{
-						width: 91px;
-						height: 91px;
-						border-radius: 90px;
-						border: 1px solid #ffffff;
-						background-image: url(../i/arina.jpg);
-						background-repeat: no-repeat;
-						background-position: 50% 50%;
-						background-size: cover;
-						overflow: hidden;
-						display: inline-block;
-						float: left;
+					.b-r-video{
+						position: relative;
+					}
+					.b-r-video-preview img{
+						top: 0px;
+						left: 0px;
+						position: absolute;
+						width: 330px;
+						height: 240px;
+						border-radius: 20px;
+					}
+					.b-r-video-preview img:after{
+						background-color: #000;
+						top: 0px;
+						left: 0px;
+						position: absolute;
+						width: 330px;
+						height: 240px;
+						border-radius: 20px;
+						opacity: 0.2;
+						z-index: 5;
+						content: " ";
 					}
 					.b-r-name{
 						font-family: Gilroy-Bold;
@@ -2189,6 +2185,24 @@ strong, b{
 }
 .b-popup .agree + label:after {
     left: 19px;
+}
+
+.ytb-btn{
+	position: absolute;
+	left: calc(50% - 35px);
+	top: calc(50% - 25px);
+	background-image: url(../i/youtube.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+	width: 70px;
+	height: 50px;
+	z-index: 10;
+	box-shadow: 0 10px 20px 0 rgba(214,0,0,0.40);
+	border-radius: 15px;
+}
+.ytb-btn:after{
+	opacity:1;
 }
 
 input[type=text], 

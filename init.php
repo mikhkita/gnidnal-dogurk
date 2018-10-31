@@ -1,5 +1,6 @@
 <?
 
+
 session_start();
 
 function getSite(){
@@ -41,6 +42,7 @@ function getSite(){
 	foreach ($sites as $site) {
 		if( strpos($_SERVER["HTTP_HOST"], $site->code) !== false ){
 			return $site;
+			var_dump($_SERVER["HTTP_HOST"], $site->code);
 		}
 	}
 
